@@ -2,8 +2,9 @@
 FROM microsoft/dotnet:runtime
 
 # curl, zip and bzip2 are used later by other tools.
+# libxt6 is required by Matlab Runtime.
 RUN apt-get update && \
-  apt-get install -y wget unzip curl zip bzip2
+  apt-get install -y libxt6 wget unzip curl zip bzip2
 
 ARG zip=MATLAB_Runtime_R2019b_Update_5_glnxa64.zip
 
